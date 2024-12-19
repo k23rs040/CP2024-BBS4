@@ -261,6 +261,14 @@ function loadPosts() {
     });
 }
 
+function getRelativeTime(timestamp) { 
+    const diff = Date.now() - timestamp; 
+    const minutes = Math.floor(diff / 60000); 
+    if (minutes < 1) return 'たった今'; 
+    if (minutes < 60) return `${minutes}分前`;
+    
+}
+
 // モーダル関連の関数
 function showModal(modalId) {
     $(`#${modalId}`).fadeIn(200);
